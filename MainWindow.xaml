@@ -1,0 +1,68 @@
+﻿<!--Nathan Peereboom
+    April 17, 2020
+    Unit 2 Summative, program to store contact information-->
+    <Window x:Class="_312840Contacts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_312840Contacts"
+        mc:Ignorable="d"
+        Title="Contacts" Height="250" Width="550"
+        FontSize="18" Background="LightGray"
+        Closing="Window_Closing">
+    <StackPanel>
+
+        <Label x:Name="lblHeader" FontSize="24" HorizontalAlignment="Center"></Label>
+        <Label x:Name="lblChooseContact" FontSize="14" FontStyle="Italic" Margin="120,0,0,0">Current Contacts</Label>
+        <ComboBox x:Name="comboContact" SelectionChanged="comboContact_SelectionChanged" HorizontalAlignment="Center" Width="320"></ComboBox>
+        <!--Name & Email fields-->
+        <StackPanel x:Name="spFirstName" Orientation="Horizontal" Margin="0,20,0,0">
+            <Label x:Name="lblFirstName" FontWeight="Bold">First Name:</Label>
+            <TextBox x:Name="txtFirstName" VerticalAlignment="Bottom" Width="399" MaxLength="15"/>
+        </StackPanel>
+        <StackPanel x:Name="spLastName" Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblLastName" FontWeight="Bold">Last Name:</Label>
+            <TextBox x:Name="txtLastName" VerticalAlignment="Bottom" Width="402" MaxLength="15"/>
+        </StackPanel>
+        <StackPanel x:Name="spEmail" Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblEmail" FontWeight="Bold">Email:</Label>
+            <TextBox x:Name="txtEmail" VerticalAlignment="Bottom" Width="445" MaxLength="40"/>
+        </StackPanel>
+        <!--Birthday fields-->
+        <StackPanel x:Name="spDateOfBirth" Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblDateOfBirth" FontWeight="Bold" VerticalAlignment="Center">Date of birth:</Label>
+
+            <StackPanel Orientation="Vertical" Margin="15,0,0,0">
+                <Label x:Name="lblYear" FontSize="14" FontStyle="Italic">Year</Label>
+                <ComboBox x:Name="comboYear" Width="75"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Label x:Name="lblMonth" FontSize="14" FontStyle="Italic">Month</Label>
+                <ComboBox x:Name="comboMonth" Width="75"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Label x:Name="lblDay" FontSize="14" FontStyle="Italic">Day</Label>
+                <ComboBox x:Name="comboDay" Width="75"/>
+            </StackPanel>
+            <!--Age-->
+            <Button x:Name="btnShowAge" Click="btnShowAge_Click" Content="Show Age" Height="30" Margin="10,0,0,0" VerticalAlignment="Bottom" 
+                    Background="#FFAEAEAE"/>
+            <Label x:Name="lblAge" Background="White" Height="30" Width="40" VerticalAlignment="Bottom" Margin="10,0,0,0" />
+        </StackPanel>
+        <!--Contact Controls-->
+        <StackPanel x:Name="spContactControls" Orientation="Horizontal" HorizontalAlignment="Left" Margin="30,30,0,0">
+            <Button x:Name="btnSaveChanges" Click="btnSaveChanges_Click" Content="Save Changes" Width="150" Background="#FFAEAEAE"/>
+            <Button x:Name="btnRemoveContact" Click="btnRemoveContact_Click" Content="Remove Contact" Width="150" Margin="20,0,0,0" 
+                    Background="#FFAEAEAE"/>
+        </StackPanel>
+        <Button x:Name="btnAddContact" Click="btnAddContact_Click" Content="Add Contact" Margin="30,30,0,0" Width="320" Background="#FFAEAEAE" 
+                HorizontalAlignment="Left"/>
+        <Label x:Name="lblFeedback" Margin="0,15,0,0"/>
+        <!--Add Contact Screen Toggles-->
+        <Button x:Name="btnNewContact" Click="btnNewContact_Click" Content="Add New Contact" Margin="30,30,0,0" Width="320" HorizontalAlignment="Left"
+                Background="#FFC1C1C1"/>
+        <Button x:Name="btnCancel" Click="btnCancel_Click" Content="Cancel" Background="#FFC1C1C1" Margin="30,30,0,0" Width="320" 
+                HorizontalAlignment="Left"/>
+    </StackPanel>
+</Window>
